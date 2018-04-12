@@ -1,0 +1,60 @@
+Manifest-Version: 1.0
+Implementation-Title: ServiceB
+Implementation-Version: 1.0
+Built-By: Administrator
+Specification-Vendor: Pivotal Software, Inc.
+Specification-Title: ServiceB
+Implementation-Vendor-Id: cn.bizfocus
+Class-Path: spring-cloud-starter-eureka-1.3.1.RELEASE.jar spring-cloud
+ -starter-1.2.2.RELEASE.jar spring-cloud-context-1.2.2.RELEASE.jar spr
+ ing-security-rsa-1.0.3.RELEASE.jar bcpkix-jdk15on-1.55.jar bcprov-jdk
+ 15on-1.55.jar spring-cloud-netflix-core-1.3.1.RELEASE.jar spring-boot
+ -1.5.3.RELEASE.jar spring-boot-autoconfigure-1.5.3.RELEASE.jar spring
+ -cloud-netflix-eureka-client-1.3.1.RELEASE.jar eureka-client-1.6.2.ja
+ r jettison-1.3.7.jar stax-api-1.0.1.jar netflix-eventbus-0.3.0.jar ne
+ tflix-infix-0.3.0.jar commons-jxpath-1.3.jar joda-time-2.9.9.jar antl
+ r-runtime-3.4.jar stringtemplate-3.2.1.jar antlr-2.7.7.jar gson-2.8.0
+ .jar commons-math-2.2.jar archaius-core-0.7.4.jar jsr311-api-1.1.1.ja
+ r servo-core-0.10.1.jar servo-internal-0.10.1.jar jersey-core-1.19.1.
+ jar jersey-client-1.19.1.jar jersey-apache-client4-1.19.1.jar httpcli
+ ent-4.5.3.jar httpcore-4.4.6.jar commons-codec-1.10.jar guice-4.1.0.j
+ ar javax.inject-1.jar aopalliance-1.0.jar jackson-annotations-2.8.0.j
+ ar jackson-core-2.8.8.jar eureka-core-1.6.2.jar woodstox-core-asl-4.4
+ .1.jar stax-api-1.0-2.jar stax2-api-3.1.4.jar spring-cloud-starter-ar
+ chaius-1.3.1.RELEASE.jar commons-configuration-1.8.jar commons-lang-2
+ .6.jar guava-18.0.jar spring-cloud-starter-ribbon-1.3.1.RELEASE.jar r
+ ibbon-2.2.2.jar ribbon-transport-2.2.2.jar rxnetty-contexts-0.4.9.jar
+  rxnetty-servo-0.4.9.jar rxnetty-0.4.9.jar netty-codec-http-4.0.27.Fi
+ nal.jar netty-codec-4.0.27.Final.jar netty-handler-4.0.27.Final.jar n
+ etty-transport-native-epoll-4.0.27.Final.jar netty-common-4.0.27.Fina
+ l.jar netty-buffer-4.0.27.Final.jar netty-transport-4.0.27.Final.jar 
+ ribbon-core-2.2.2.jar ribbon-httpclient-2.2.2.jar commons-collections
+ -3.2.2.jar netflix-commons-util-0.1.1.jar ribbon-loadbalancer-2.2.2.j
+ ar netflix-statistics-0.1.1.jar rxjava-1.1.10.jar ribbon-eureka-2.2.2
+ .jar slf4j-api-1.7.25.jar xstream-1.4.9.jar xmlpull-1.1.3.1.jar xpp3_
+ min-1.1.4c.jar spring-cloud-starter-feign-1.3.1.RELEASE.jar spring-we
+ b-4.3.8.RELEASE.jar spring-aop-4.3.8.RELEASE.jar spring-beans-4.3.8.R
+ ELEASE.jar spring-context-4.3.8.RELEASE.jar spring-cloud-commons-1.2.
+ 2.RELEASE.jar spring-security-crypto-4.2.2.RELEASE.jar feign-core-9.5
+ .0.jar animal-sniffer-annotation-1.0.jar feign-slf4j-9.5.0.jar feign-
+ hystrix-9.5.0.jar hystrix-core-1.5.12.jar HdrHistogram-2.1.9.jar spri
+ ng-boot-starter-web-1.5.3.RELEASE.jar spring-boot-starter-1.5.3.RELEA
+ SE.jar spring-boot-starter-logging-1.5.3.RELEASE.jar logback-classic-
+ 1.1.11.jar logback-core-1.1.11.jar jcl-over-slf4j-1.7.25.jar jul-to-s
+ lf4j-1.7.25.jar log4j-over-slf4j-1.7.25.jar snakeyaml-1.17.jar spring
+ -boot-starter-tomcat-1.5.3.RELEASE.jar tomcat-embed-core-8.5.14.jar t
+ omcat-embed-el-8.5.14.jar tomcat-embed-websocket-8.5.14.jar hibernate
+ -validator-5.3.5.Final.jar validation-api-1.1.0.Final.jar jboss-loggi
+ ng-3.3.1.Final.jar classmate-1.3.3.jar jackson-databind-2.8.8.jar spr
+ ing-webmvc-4.3.8.RELEASE.jar spring-expression-4.3.8.RELEASE.jar spri
+ ng-core-4.3.8.RELEASE.jar
+url: http://projects.spring.io/spring-boot/springcloud/service-b/
+Implementation-Vendor: Pivotal Software, Inc.
+Main-Class: cn.bizfocus.feign.FeignStarter
+build-time: 2018-04-12T06:54:52Z
+Build-Jdk: 1.8.0_144
+Specification-Version: 1.0
+Implementation-URL: http://projects.spring.io/spring-boot/springcloud/
+ service-b/
+Created-By: Maven Integration for Eclipse
+
