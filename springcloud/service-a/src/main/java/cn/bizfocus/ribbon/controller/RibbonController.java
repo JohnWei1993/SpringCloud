@@ -19,12 +19,12 @@ public class RibbonController {
 	
 	@RequestMapping("/ribbon")
 	public String home(@RequestParam String name) {
-		try {
-			Thread.sleep(15000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		try {
+//			Thread.sleep(15000);
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		logger.warn("this is service-ribbon!!!");
 	    return "hi "+name+",i am from port:" +port;
 	}

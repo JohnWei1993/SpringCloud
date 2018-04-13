@@ -1,6 +1,8 @@
 spring:
   application:
     name: service-ribbon
+  zipkin:
+    base-url: http://127.0.0.1:7003
     
 server:
   port: 8081
@@ -8,7 +10,8 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://127.0.0.1:8761/eureka/
+#      defaultZone: http://127.0.0.1:8761/eureka/
+      defaultZone: http://register1:8761/eureka/, http://register2:8762/eureka/
       
 hystrix:
   command:
@@ -17,3 +20,6 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 5000
+  config:
+    stream:
+      maxConcurrentConnections: 50

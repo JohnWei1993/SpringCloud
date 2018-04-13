@@ -1,8 +1,8 @@
-spring:
-  cloud:
-    config:
-      uri: http://localhost:7001
-      fail-fast: true
-  application:
-    name: register
-  
+#spring:
+#  cloud:
+#    config:
+#      uri: http://localhost:7001
+#      fail-fast: true
+#      label: master
+#  application:
+#    name: register

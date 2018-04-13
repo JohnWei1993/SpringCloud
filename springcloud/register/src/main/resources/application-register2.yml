@@ -1,0 +1,11 @@
+server:
+  port: 8762
+  
+spring:
+  application:
+    name: regoster2
+    
+eureka:
+  client:
+    service-url:
+      defaultZone: http://register1:8761/eureka/

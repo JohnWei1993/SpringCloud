@@ -1,4 +1,14 @@
 spring:
+# git管理配置
+#  cloud:
+#    config:
+#      server:
+#        git:
+#          uri: https://github.com/JohnWei1993/SpringCloud/
+#          searchPaths: config-repo/
+#          label: master
+#          username: JohnWei1993
+#          password: hswsq1993
   cloud:
     config:
       server:
@@ -11,3 +21,4 @@ spring:
     
 server:
   port: 7001
+  

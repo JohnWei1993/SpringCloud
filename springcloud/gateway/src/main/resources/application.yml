@@ -21,10 +21,12 @@ zuul:
       path: /ribbon/**
       serviceId: service-ribbon
 #      url: http://127.0.0.1:8081/
+      strip-prefix: true
     service-feign:
       path: /feign/**
       serviceId: service-feign
 #      url: http://127.0.0.1:8082/
+      strip-prefix: false
   max:
     host:
       connections: 5000
@@ -43,3 +45,8 @@ ribbon:
   ReadTimeout: 10000
 #  SocketTimeout: 10000
   ConnectTimeout: 3000
+  
+logging:
+  level:
+    com.netflix: DEBUG
+  
