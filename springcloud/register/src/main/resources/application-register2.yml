@@ -3,9 +3,14 @@ server:
   
 spring:
   application:
-    name: regoster2
+    name: register2
     
 eureka:
+  server:
+    # 关闭自我保护
+    enable-self-preservation: false
+    # 清理间隔 （单位毫秒 默认60 * 1000）
+    eviction-interval-timer-in-ms: 1000
   client:
     service-url:
       defaultZone: http://register1:8761/eureka/

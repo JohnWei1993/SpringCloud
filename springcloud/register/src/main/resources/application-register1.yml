@@ -3,9 +3,14 @@ server:
   
 spring:
   application:
-    name: register1
+      name: register1
     
 eureka:
+  server:
+    # 关闭自我保护
+    enable-self-preservation: false
+    # 清理间隔 （单位毫秒 默认60 * 1000）
+    eviction-interval-timer-in-ms: 1000
   client:
     service-url:
       defaultZone: http://register2:8762/eureka/

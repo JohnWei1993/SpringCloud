@@ -6,14 +6,30 @@ spring:
     name: gateway
     
 eureka:
+  instance:
+    # 续约更新时间间隔（单位秒，默认30秒）
+    lease-expiration-duration-in-seconds: 10
+    # 续约到期时间（默认90秒）
+    lease-renewal-interval-in-seconds: 10
+    #以IP地址注册到服务中心，相互注册使用IP地址
+    preferIpAddress: true
+    #强制指定IP地址，默认会获取本机的IP地址
+    ipAddress: 127.0.0.2
   client:
     serviceUrl:
       defaultZone: http://127.0.0.1:8761/eureka/
+#      defaultZone: http://register1:8761/eureka/, http://register2:8762/eureka/
+    # 健康检查
+    healthcheck:
+      enabled: true
       
 zuul:
+  # 网关前缀
+  prefix: /api
+  # 指定要忽略的服务发现的自动配置
   ignoredServices: '*'
   host:
-#路由转发至url，超时时间取这两个配置参数
+  #路由转发至url，超时时间取这两个配置参数
     socket-timeout-millis: 10000
     connect-timeout-millis: 10000
   routes:
@@ -26,7 +42,7 @@ zuul:
       path: /feign/**
       serviceId: service-feign
 #      url: http://127.0.0.1:8082/
-      strip-prefix: false
+      strip-prefix: true
   max:
     host:
       connections: 5000

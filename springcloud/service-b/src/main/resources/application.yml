@@ -2,16 +2,34 @@ spring:
   application:
     name: service-feign
   zipkin:
-    base-url: http://127.0.0.1:7003
+      base-url: http://127.0.0.1:9411
+  sleuth:
+    web:
+      client:
+        enabled: true
+    sampler:
+      probability: 1.0 # 采用比例，默认 0.1 全部采样 1.0
     
 server:
   port: 8082
 
 eureka:
+  instance:
+    # 续约更新时间间隔（单位秒，默认30秒）
+    lease-expiration-duration-in-seconds: 10
+    # 续约到期时间（默认90秒）
+    lease-renewal-interval-in-seconds: 10
+    prefer-ip-address: true
+    #以IP地址注册到服务中心，相互注册使用IP地址
+    #强制指定IP地址，默认会获取本机的IP地址
+#    ipAddress: 127.0.0.2
   client:
     serviceUrl:
-#      defaultZone: http://127.0.0.1:8761/eureka/
-      defaultZone: http://register1:8761/eureka/, http://register2:8762/eureka/
+      defaultZone: http://127.0.0.1:8761/eureka/
+#      defaultZone: http://register1:8761/eureka/, http://register2:8762/eureka/
+    # 健康检查
+    healthcheck:
+      enabled: true
       
 feign:
   hystrix:
@@ -23,7 +41,11 @@ ribbon:
   MaxAutoRetries: 0
   MaxAutoRetriesNextServer: 0
   OkToRetryOnAllOperations: false
-  
+
+#turbine:
+#  instanceUrlSuffix:
+#    default: /hystrix.stream
+
 hystrix:
   command:
     "FeignServiceClient#home(String)":
