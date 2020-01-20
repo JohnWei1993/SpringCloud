@@ -2,14 +2,15 @@ package com.john.gateway;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.log4j.Logger;
 
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class AccessFilter extends ZuulFilter{
 	
-	private final Logger logger = Logger.getLogger(getClass());
+	private final Logger logger = LoggerFactory.getLogger(getClass());
 
 	@Override
 	public Object run() {
@@ -18,13 +19,13 @@ public class AccessFilter extends ZuulFilter{
 
         logger.info(String.format("%s request to %s", request.getMethod(), request.getRequestURL().toString()));
 
-        Object accessToken = request.getParameter("accessToken");
-        if(accessToken == null) {
-        	logger.warn("access token is empty");
-            ctx.setSendZuulResponse(false);
-            ctx.setResponseStatusCode(401);
-            return null;
-        }
+//        Object accessToken = request.getParameter("accessToken");
+//        if(accessToken == null) {
+//        	logger.warn("access token is empty");
+//            ctx.setSendZuulResponse(false);
+//            ctx.setResponseStatusCode(401);
+//            return null;
+//        }
         logger.info("access token ok");
         return null;
 	}

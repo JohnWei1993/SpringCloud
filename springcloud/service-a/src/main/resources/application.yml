@@ -2,46 +2,61 @@ spring:
   application:
     name: service-ribbon
   zipkin:
-    base-url: http://127.0.0.1:9411
+      base-url: http://127.0.0.1:9411
   sleuth:
     web:
       client:
         enabled: true
     sampler:
-      probability: 1.0 # 采用比例，默认 0.1 全部采样 1.0
-    
+      probability: 1.0
+  cloud:
+    inetutils:
+#      ignored-interfaces[0]: eth0
+      ignored-interfaces: [eth0, eth2, lo]
+
 server:
   port: 8081
 
 eureka:
   instance:
-    # 续约更新时间间隔（单位秒，默认30秒）
     lease-expiration-duration-in-seconds: 10
-    # 续约到期时间（默认90秒）
     lease-renewal-interval-in-seconds: 10
-    #以IP地址注册到服务中心，相互注册使用IP地址
-    preferIpAddress: true
-    #强制指定IP地址，默认会获取本机的IP地址
+#    hostname: localhost
+    prefer-ip-address: true
 #    ipAddress: 127.0.0.2
   client:
     serviceUrl:
       defaultZone: http://127.0.0.1:8761/eureka/
 #      defaultZone: http://register1:8761/eureka/, http://register2:8762/eureka/
-    # 健康检查
     healthcheck:
       enabled: true
 
-#turbine:
-#  instanceUrlSuffix:
-#    default: /hystrix.stream
+feign:
+  hystrix:
+    enabled: true
+
+ribbon:
+  ReadTimeout: 10000
+  ConnectTimeout: 10000
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 0
+  OkToRetryOnAllOperations: false
 
 hystrix:
   command:
+    "FeignServiceClient#home(String)":
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+            interruptOnCancel: true
+      circuitBreaker:
+        requestVolumeThreshold: 10
     default:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 5000
-  config:
-    stream:
-      maxConcurrentConnections: 50
+            timeoutInMilliseconds: 60000
+
+logging:
+  file: d:/log/ribbon.log
